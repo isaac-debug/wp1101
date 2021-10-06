@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    text-align:center;
+  }
+
+  .grid-container{
+      --gap: 20px;
+      --num-cols: 4;
+      --row-height: 300px;
+
+      box-sizing: border-box;
+      padding: var(--gap);
+
+      display: grid;
+      grid-template-columns: repeat(var(--num-cols), 1fr);
+      grid-auto-rows: var(--row-height);
+      grid-gap: var(--gap);
+  }
+  .image{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  #main{
+      width: 60%;
+      height: 60%;
+      transform: 1;
+      object-fit: contain;
+  }
+
+  .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    cursor: pointer;
+    transition:.5s ease-in-out;
+  }
+  
+  .image:hover img{
+    transform: scale(1.25);
+  }
+
+  .w-1{
+    grid-column: span 1;
+  }
+  
+  .w-2{
+    grid-column: span 2;
+  }
+  
+  .w-3{
+    grid-column: span 3;
+  }
+  
+  .w-4{
+    grid-column: span 4;
+  }
+  
+  .w-5{
+    grid-column: span 5;
+  }
+  
+  .w-6{
+    grid-column: span 6;
+  }
+  
+  .h-1{
+    grid-row: span 1;
+  }
+  
+  .h-2{
+    grid-row: span 2;
+  }
+  
+  .h-3{
+    grid-row: span 3;
+  }
+  
+  .h-4{
+    grid-row: span 4;
+  }
+  
+  .h-5{
+    grid-row: span 5;
+  }
+  
+  .h-6{
+    grid-row: span 6;
+  }
+
+  /*andything under 1024px*/
+@media screen and (max-width:1024px){
+    .grid-container{
+        --num-cols: 3;
+        --row-height: 200px;
+    }
+}
