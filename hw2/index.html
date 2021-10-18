@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Photo Album</title>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="styles.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <script src="main.js"></script>
+
+<div style="text-align:center">
+    <h1>Image Gallery</h1>
+</div>
+<div style="text-align:center">
+    <h3>Choose your album:</h3>
+</div>
+
+<div class="album-windows">
+    <div class="album" onclick="show_album('mountains_album', this)">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Mountains"  >
+        <div class="overlay"  >
+            <div class="text" >Mountains</div>
+        </div>
+    </div>
+    <div class="album" onclick="show_album('sea_album', this)">
+        <img src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Sea">
+        <div class="overlay">
+            <div class="text">Sea</div>
+        </div>
+    </div>
+    <div class="album" onclick="show_album('animals_album', this)">
+        <img src="https://images.pexels.com/photos/689784/pexels-photo-689784.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Animals" >
+        <div class="overlay">
+            <div class="text">Animals</div>
+        </div>
+    </div>
+    <div class="album" onclick="show_album('architecture_album', this)">
+        <img src="https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Architecture">
+        <div class="overlay">
+            <div class="text">Architect</div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="pic-container">
+    <img id="chosenImg" style="width:75%">
+</div>
+
+<div> 
+    <div class="image-windows" id="image-windows"></div>
+    <div class="scrollbar"></div>
+</div>
+<div class="functional">
+    <div class="add-form">
+    <h3>Add URL to add photo</h3>
+    <form>
+      <input type="text" name="txt" id="txt" required>
+      <button type="submit" class="btn-list">
+          <i class="fa fa-plus-square" style="font-size:20px;"></i>
+       </button>
+    </form>
+  </div>
+</div>
+  
+    
+</body>
+</html>

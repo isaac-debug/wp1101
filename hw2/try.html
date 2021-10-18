@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Photo Album</title>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    media="screen"
+    href="styles.css"
+  />
+</head>
+<body>
+    <script src="main.js"></script>
+
+<div style="text-align:center">
+    <h2>Image Gallery</h2>
+    <p>Click on the images below:</p>
+</div>
+      
+    <!-- The grid: four columns -->
+<div class="row">
+    <div class="column">
+      <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Mountains1" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Mountains2" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Mountains3" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+      <img src="https://images.pexels.com/photos/326058/pexels-photo-326058.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Lights" style="width:100%" onclick="myFunction(this);">
+    </div>
+  </div>
+  
+  <!-- The expanding image container -->
+  <div class="big-pic-container">
+  
+    <!-- Expanded image -->
+    <img id="expandedImg" class="center" style="width:50%">
+  
+</div>
+    
+</body>
+</html>
