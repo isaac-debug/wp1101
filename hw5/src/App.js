@@ -11,20 +11,22 @@ function App() {
   const operation_list = ['+', '-', '*', '/'];
   const calcBtn = [];
   [9, 8, 7, 6, 5, 4, 3, 2, 1, 0, '.'].forEach(item =>{
-    if(error==false)
-      calcBtn.push(
-        <button onClick = {e => {
-          if(true){
-            if(calc == 0)
-              setCalc(()=>e.target.value)
-            else
-              setCalc(()=>calc + e.target.value)
-          }
-        }}
-        value = {item}
-        key = {item}>
-          {item}
-        </button>
+    calcBtn.push(
+      <button onClick = {e => {
+        if(calc === '0')
+          if(e.target.value === '.')
+            setCalc(()=>'0.')
+          else if(e.target.value == '0')
+            setCalc(()=>'0')
+          else
+            setCalc(()=>e.target.value)
+        else
+          setCalc(()=>calc + e.target.value)
+      }}
+      value = {item}
+      key = {item}>
+        {item}
+      </button>
       )
   })
 
@@ -102,17 +104,17 @@ function App() {
     }
   }
   const Mplus = ()=>{
-    if(operation_list.includes(calc[calc.length-1]))
-      check_op()
-    // do Mplus
-    let Mplus = calc + '+' + memory;
-    alert(Mplus)
-    setMemory(()=>
-        String(eval(Mplus)).length > 3 &&
-          String(eval(Mplus)).includes('.')
-            ?String(eval(Mplus).toFixed())
-              :String(eval(Mplus))
-      )
+    if(error == false){
+      if(operation_list.includes(calc[calc.length-1]))
+        check_op()
+      // do Mplus
+      let Mplus = calc + '+' + memory;
+      alert(Mplus)
+      setMemory(()=>
+            String(eval(Mplus)).includes('.')
+              ?String(eval(Mplus).toFixed())
+                :String(eval(Mplus))
+        )}
   }
 
   return (
@@ -124,7 +126,7 @@ function App() {
       
       <div className='digits flex'>{calcBtn}</div>
       <div className='modifiers subgrid'>
-        <button onClick={()=> setCalc(()=>0)}> C </button>
+        <button onClick={()=> {setCalc(()=>0); setError(()=>false)}}> C </button>
         <button onClick={percent}> % </button>
         <button onClick={reverse}> +/-</button>
       </div>
@@ -139,7 +141,7 @@ function App() {
         <button onClick={()=> setCalc(()=>calc.substr(0, calc.length-1))}> Del </button>
         <button onClick={Mplus}> M+ </button>
         <button onClick={()=> setCalc(()=>memory)}> MR </button>
-        <button onClick={()=> {setMemory(()=>'0'); alert('Memory Cleared')}}> MC </button>
+        <button onClick={()=> {if(error == false){setMemory(()=>'0'); alert('Memory Cleared')}}}> MC </button>
       </div>
     </div>
   );

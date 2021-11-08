@@ -2,7 +2,10 @@ IOS Calculator
 
 Calculator's Funcions are below:
 
-C:      return to zero
+
+C:      return to zero, and also helps fix error
+When 'Error' occurs, 'C' button is the only buton can press
+
 %:      division by 100
 +/-:    change sign
 Del:    deleted the last number
