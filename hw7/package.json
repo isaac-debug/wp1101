@@ -8,6 +8,7 @@
     "server": "cd backend && yarn server"
   },
   "dependencies": {
+    "antd": "^4.17.3",
     "dotenv": "^10.0.0"
   }
 }

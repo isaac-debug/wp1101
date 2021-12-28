@@ -20,12 +20,10 @@ function App() {
       else{
         todos_array[todo.id].completed = true;
         finish += 1;
-        alert("I am sorry... I don't know why this can't work...");
-        alert("whe I treid to set my 'finish count' state, my page just went blank")
-      }
+        }
       // renew
       setTodos(todos=>todos_array);
-      //setFinNum(finish_num=>finish);
+      setFinNum(finish_num=>finish);
     }
 
     function remove_todo(){

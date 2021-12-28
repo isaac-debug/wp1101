@@ -16,10 +16,8 @@ app.use(cors())
 app.use('/api', routes)
 
 // set database
-mongoose.connect('mongodb+srv://wp1101:wp1101@cluster0.pctb9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+
 const db = mongoose.connection
 db.on('error', error => console.log(error))
 db.once('open', ()=>console.log('Connected to Mongoose'))
