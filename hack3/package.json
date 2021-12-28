@@ -1,0 +1,39 @@
+{
+  "name": "hack3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/node": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "cypress": "^9.2.0",
+    "dotenv-defaults": "^3.0.0",
+    "mongoose": "^6.1.4"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
+    "frontend": "cd ./frontend && npm start",
+    "backend": "cd ./backend && npm start",
+    "test": "npx cypress run --browser=firefox --spec cypress/integration/*.spec.js"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.6",
+    "@apollo/react-hooks": "^4.0.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.5",
+    "@mui/lab": "^5.0.0-alpha.62",
+    "@mui/material": "^5.2.6",
+    "apollo-link-ws": "^1.0.20",
+    "graphql": "^16.2.0",
+    "graphql-yoga": "^1.18.3",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.15",
+    "react-apollo": "^3.1.5",
+    "react-beautiful-dnd": "^13.1.0",
+    "subscriptions-transport-ws": "^0.11.0",
+    "uuid": "^8.3.2"
+  }
+}
