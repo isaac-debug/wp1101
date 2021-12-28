@@ -6,7 +6,8 @@ export const GET_TASKS_QUERY = gql`
       # TODO 2 Please modify the query to get more properties
       dueDate
       id
-      status
+      title
+      content
     }
   }
 `;
