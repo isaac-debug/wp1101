@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Verdana"
+  }
+  .loginPic{
+    width: 100%;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 500px;
+    margin: auto;
+  }
+  
+  
+  .App-eventInfo{
+    margin: 20px;
+    width: 80%;
+  }
+  .App-loginInput{
+    width: 70%;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .App-clubMenu{
+    width: 400px;
+    height: 40%;
+    overflow-y: auto;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .App-clubMenu button{
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 50px;
+    margin: 10px;
+  }
+  .App-loby {
+    overflow: hidden;
+  }
+  .App-functionMenu {
+    margin: 20px;
+    float:left;
+    width: 20%;
+  }
+  .App-lobyContent {
+    margin: 20px;
+    float:right;
+    width: 30%;
+  }
+  .App-lobyContent div{
+    margin: 20px;
+    float:right;
+    width: 30%;
+  }
+  .App-inputBar {
+    width: 40%;
+  }
+  
+  .App-options{
+    padding-top: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .App-joinClub{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .App-info{
+    width: 30%;
+    
+  }
+
+  .login-option{
+    padding-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    display: block;
+    width:70%;
+    display:flex;
+    flex-direction: row;
+  }
+
+  .App-title {
+    display: flex;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+  }
+  
+  .App-title h1 {
+    align-items: center;
+    font-size: 3em;
+  }
+  
+  .App-messages {
+    width: 100%;
+    height: 300px;
+    background: #eeeeee52;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    overflow: auto;
+    vertical-align: middle;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
+  }
+  

@@ -1,0 +1,255 @@
+#TODO(1/14)
+#Edit invitation v
+#Edit identity 
+#Subscription
+  #messages v
+
+
+type Query {
+  #---------note---------
+  #LoginData:{status, user's profile} plz ref LoginData
+  #Sign In
+  user(userName: String!, password: String!): LoginData!
+  updateUser(userName:String!): User!
+  #---------note---------
+  #TODO:Privacy of Club member
+  #clubs: search all clubs
+  #club: search a club by it's name
+  #note that duplicate clubName is rejected when creating(handled already)
+  clubs: [Club!] 
+  club(name:String!): Club
+  event(clubName: String!,name:String!): Event
+}
+
+type Mutation{
+  #---------note---------
+  #Sign Up
+  createUser(
+    userName:String!, 
+    password:String!, 
+    nickname:String!,
+    email:String!): LoginData!
+  #---------note---------
+  #host should be userName
+  #host will be automatically set one of the members in club
+  #requestClubData:{status, club's info} plz ref requestClubData
+  createClub(
+    name:String!, 
+    host:String!,
+    invitation:String!,
+    introduction:String!,
+    time:String): requestClubData!
+  #---------note---------
+  #must send invitation code to verify
+  #user's attended clubs should be updated at the same time
+  joinClub(
+    name:String!, 
+    userName:String!, 
+    invitation:String!): requestClubData!
+  #---------note---------
+  #host should be userName
+  #host will be automatically set one of the members in  event
+  #args.name is the event name
+  #must specify clubName under which the event is created
+  #requestEventData:{status, Event's info} 
+  createEvent(
+    clubName:String!,
+    name:String!, 
+    time:String!,
+    location:String!,
+    introduction:String!,
+    host:String!,
+    active: Boolean!):requestEventData!
+  joinEvent(
+    name:String!,
+    clubName: String!,
+    userName:String!): requestEventData!
+  #---------note---------
+  #used for club's chatRoom
+  #sender should be userName
+  #note that the return sender in MessageData will be nickName
+  #name: eventname
+  #requestMessageData:{status, Message's info} 
+  createClubMessage(
+    clubName:String!,
+    sender:String!  
+    body:String!): requestMessageData!
+  #used for event's chatRoom
+  createEventMessage(
+    clubName:String!
+    name:String!,
+    sender:String!  
+    body:String!): requestMessageData!
+  #---------note---------
+  #support: invitation, location, time
+  #not support: host, clubName
+  #only user(userName) authorized can mutate(identity=True)
+  mutateClubInfo(
+    userName:String! #for verification
+    name:String!     #clubName
+    invitation:String
+    introduction:String
+    time:String): mutateClubData!
+  # mutateMembers(
+  #   userName:String! #for verification
+  #   name:String!     #clubName
+  #   targetUser:String!#another Username
+  #   methodType: MethodType!   #DOWNGRADE,UPGRADE,DELETE
+  #   ): mutateClubData!
+}
+type Subscription {
+  #---------note---------
+  #clubName:clubName
+  #name:EventName
+  clubMessage(clubName: String!): CMSubscriptionPayload!
+  eventMessage(clubName:String!, name:String!): EMSubscriptionPayload!
+  club(name:String!): Club!
+  updateUser(userName:String!): User!
+}
+
+type ClubSubscriptionPayload{
+  mutation:MutationType
+  data: Club!
+}
+
+type CMSubscriptionPayload {
+  mutation: MutationType!
+  data: Message!
+}
+
+type EMSubscriptionPayload{
+  mutation: MutationType!
+  data: Message!
+}
+
+
+#---------note---------
+#User: private user data
+#publicUser: public user data (nickname, userName)
+#clubs: store as [clubNames] (to avoid infinite loop)
+type User {
+  userName: String!
+  password: String!
+  nickname: String!,
+  email: String!,
+  clubs: [String!],  
+}
+type publicUser{
+  nickname: String!
+  userName: String!
+}
+
+type Club {
+  name: String!
+  host: String!
+  introduction: String!
+  invitation: String!  #前端設定
+  time: String!  #社課時間
+  members: [Member!]!
+  events: [Event!]
+  chatRoom: [Message!]
+}
+type Event{
+  name:String!
+  time:String!
+  location:String!
+  introduction:String!
+  host:String!
+  members:[Member!]!
+  active: Boolean!  #true:active
+  chatRoom: [Message!]
+}
+type Message {
+  sender: publicUser!
+  body: String!
+}
+type Member{
+  user:User!
+  identity: Boolean! #true: host, false:normal member
+}
+
+#---------note---------
+# if log in/up fails, userData is null
+# check Status to see if log in/up succeeds
+type LoginData {
+  status: Status!,
+  userData: User
+}
+type requestClubData{
+  status: Status!,
+  clubData: Club  
+}
+type mutateClubData{
+  status: Status!
+  clubData: Club
+}
+type requestEventData{
+  status: Status!,
+  eventData: Event
+}
+type requestMessageData{
+  status: Status!,
+  messageData: Message
+}
+enum Status {
+  SUCCESS
+  USER_NOT_FOUND
+  USER_ALREADY_EXISTED
+  INVALID_PASSWORD
+  EMAIL_ALREADY_EXISTED
+  CLUB_ALREADY_EXISTED
+  CLUB_NOT_FOUND
+  MEMBER_ALREADY_EXISTED
+  HOST_NOT_FOUND
+  VERIFICATION_FAILED
+  EVENT_NOT_FOUND
+  EVENT_ALREADY_EXISTED
+  NOT_AUTHORIZED
+  INVALID_INVITATION
+}
+enum MethodType{
+  DELETE
+  UPGRADE
+  DOWNGRADE
+}
+enum MutationType{
+  CREATED
+  DELETED
+}
+
+
+# type Mutation {
+#   createChatBox(name1: String, name2: String): ChatBox!
+#   createMessage(from: String, to: String, message: String): Message!
+# }
+# type Query {
+#   chatBox(name1: String, name2: String): ChatBox!
+#   messages: [Message!]
+#   users(query: String): [User!]
+# }
+# # subscribe to chatbox messages 
+# type Subscription {
+#   message(name1: String, name2: String): MessageSubscriptionPayload!
+# }
+# type MessageSubscriptionPayload {
+#   mutation: MutationType!
+#   data: Message!
+# }
+# enum MutationType{
+#   CREATED
+# }
+# type ChatBox {
+#   id: ID!
+#   name: String!
+#   messages: [Message!]
+# }
+# type Message {
+#   id: ID!
+#   sender: User!
+#   body: String!
+# }
+# type User {
+#   id: ID!
+#   name: String!
+# }
+
