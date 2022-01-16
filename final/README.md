@@ -25,7 +25,7 @@ yarn install
 yarn start
 
 ## Functions:  
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/Login.jpg?raw=true)   
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/Login.jpg | width=100)   
 Login page
 
 ![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/JoinClub.jpg?raw=true)   
