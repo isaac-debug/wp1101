@@ -9,8 +9,7 @@
 https://youtu.be/PxESAjJTIuw
 
 ## Deploy Service:
-Frontend:
-Backend:
+https://wannahangout1101.herokuapp.com/
 
 ## Install and Testing:
 git clone
