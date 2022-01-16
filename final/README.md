@@ -14,7 +14,7 @@ Backend:
 
 ## Install and Testing:
 git clone
-
+fill up MONGO_URL in .env and you are ready to go~   
 ### frontend
 cd frontend
 yarn install
