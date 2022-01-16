@@ -26,22 +26,22 @@ yarn install
 yarn start
 
 ## Functions:  
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/Login.jpg?raw=true)   
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/Login.jpg?raw=true)   
 Login page
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/JoinClub.jpg?raw=true)   
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/JoinClub.jpg?raw=true)   
 Join Club
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/JoinClub.jpg?raw=true)   
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/JoinClub.jpg?raw=true)   
 Choose Club already in
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/ClubMenu.jpg?raw=true)   
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/ClubMenu.jpg?raw=true)   
 Club Loby and Club Chat
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/EventInfo.jpg?raw=true)  
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/EventInfo.jpg?raw=true)  
 Event Info
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/EventChat.jpg?raw=true)  
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/EventChat.jpg?raw=true)  
 Event Chat
 
 ## Structure:
