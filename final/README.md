@@ -31,16 +31,16 @@ Login page
 <img src="https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/JoinClub.jpg" width=50% height=50%>  
 Join Club
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/JoinClub.jpg?raw=true)   
+<img src="https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/JoinClub.jpg" width=50% height=50%> 
 Choose Club already in
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/ClubMenu.jpg?raw=true)   
+<img src="https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/ClubMenu.jpg" width=50% height=50%> 
 Club Loby and Club Chat
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/EventInfo.jpg?raw=true)  
+<img src="https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/EventInfo.jpg" width=50% height=50%> 
 Event Info
 
-![alt text](https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/EventChat.jpg?raw=true)  
+<img src="https://github.com/isaac-debug/wp1101/blob/main/final/demoImg/EventChat.jpg" width=50% height=50%> 
 Event Chat
 
 ## Structure:
