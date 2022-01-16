@@ -25,24 +25,23 @@ cd backend
 yarn install
 yarn start
 
-## Functions:
-
-![alt text](demoImg\Login.jpg?raw=true "login")
+## Functions:  
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/Login.jpg?raw=true)   
 Login page
 
-![alt text](demoImg\JoinClub.jpg?raw=true "Join")
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/JoinClub.jpg?raw=true)   
 Join Club
 
-![alt text](http://url/to/img.png?raw=true "CHoose")
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/JoinClub.jpg?raw=true)   
 Choose Club already in
 
-![alt text](demoImg\ClubMenu.jpg?raw=true "Loby")
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/ClubMenu.jpg?raw=true)   
 Club Loby and Club Chat
 
-![alt text](demoImg\EventInfo.jpg?raw=true "Event")
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/EventInfo.jpg?raw=true)  
 Event Info
 
-![alt text](demoImg\EventChat.jpg?raw=true "Eventchat")
+![alt text](https://github.com/isaac-debug/wp1101/blob/main/demoImg/EventChat.jpg?raw=true)  
 Event Chat
 
 ## Structure:
